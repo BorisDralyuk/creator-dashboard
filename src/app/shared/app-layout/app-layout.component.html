@@ -1,0 +1,16 @@
+<div #sidebar class="sidebar">
+	<div>
+		<moonshot-logo [isOpen]="isOpen"></moonshot-logo>
+		<moonshot-sidenav [menuItems]="menuItems"></moonshot-sidenav>
+	</div>
+	<div class="toogle-sidenav">
+		<a class="closebtn" (click)="openNav()"> <!-- href="javascript:void(0)" -->
+			<mat-icon class="open-sidenav" *ngIf="isOpen"  mat-list-icon>chevron_right</mat-icon>
+			<mat-icon class="close-sidenav"*ngIf="!isOpen"  mat-list-icon>chevron_left</mat-icon>
+		</a>
+	</div>
+</div>
+<div #main id="main">
+	<mat-toolbar>My App</mat-toolbar>
+	<router-outlet></router-outlet>
+</div>
