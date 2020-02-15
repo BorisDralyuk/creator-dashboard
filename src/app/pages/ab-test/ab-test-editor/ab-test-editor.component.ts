@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'moonshot-ab-test-editor',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AbTestEditorComponent implements OnInit {
 
+  toogleLeft = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toogleLeftBlock() {
+    this.toogleLeft = !this.toogleLeft;
   }
 
 }

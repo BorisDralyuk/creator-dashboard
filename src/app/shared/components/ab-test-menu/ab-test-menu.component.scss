@@ -1,7 +1,3 @@
-.ab-test-container{
-	padding: 0 24px;
-}
-
 .menu-ab-test{
 	height: 45px;
 	border-bottom: 1px solid #c3cfdd;
@@ -9,4 +5,11 @@
 
 .mat-toolbar-row, .mat-toolbar-single-row{
 	padding: 0;
+}
+
+.mat-icon-button{
+    margin-right: 30px;
+}
+.mat-toolbar{
+  color: #5c7390;
 }

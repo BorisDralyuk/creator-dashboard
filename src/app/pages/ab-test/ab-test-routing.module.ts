@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AbTestLayoutComponent } from './ab-test-layout/ab-test-layout.component';
 import { AbTestEditorComponent } from './ab-test-editor/ab-test-editor.component';
-
-
-
+import { AppLayoutComponent } from 'src/app/shared/components/app-layout/app-layout.component';
 
 const routes: Routes = [
   {
-    path: '', component: AbTestLayoutComponent, children: [
+    path: '', component: AppLayoutComponent, children: [
       { path: '', redirectTo: 'editor', pathMatch: 'full'},
-      {path: 'editor', component: AbTestEditorComponent}
+      {path: 'editor', 
+        data: { title: 'editor'},
+      component: AbTestEditorComponent}
   ]}
 ];
 

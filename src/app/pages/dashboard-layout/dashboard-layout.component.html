@@ -1,0 +1,7 @@
+<div #sidebar class="sidebar">
+	<moonshot-menu [menu]="menu" (openMenu)="openMenu($event)"></moonshot-menu>
+</div>
+<div #main class="main">
+	<moonshot-toolbar [title]="(route.data | async).title"></moonshot-toolbar>
+	<router-outlet></router-outlet>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'moonshot-login',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      login: new FormControl('', [Validators.required])
+    });
+  }
+
+
+  submitHandler(){
+    console.log(this.form.value);
+    console.log('this.form.value');
+  }
+
+  inputHandler(value) {
+    this.form.controls['login'].setValue(value);
+    // this.form.controls['login'].touched = true;
+    console.log(this.form.value);
+    console.log(value);
   }
 
 }

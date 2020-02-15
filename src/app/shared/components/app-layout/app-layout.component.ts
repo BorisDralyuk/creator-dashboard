@@ -1,36 +1,19 @@
 import { Component, ChangeDetectorRef, OnDestroy, ViewChild, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'moonshot-app-layout',
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss']
 })
+export class AppLayoutComponent implements OnInit   {
 
-// export class AppLayoutComponent implements OnInit {
+  @ViewChild('sidebar', { static: true }) sidebar;
+  @ViewChild('main', { static: true }) main;
 
-//   constructor() {
-//   }
-
-//   @ViewChild('drawer', { static: false })
-//   drawer: MatSidenav;
-
-//   ngOnInit(): void {
-//   }
-// }
-export class AppLayoutComponent   {
-  mobileQuery: MediaQueryList;
-  @ViewChild('sidebar', { static: false })
-  sidebar;
-  @ViewChild('main', { static: false })
-  main;
-
-
-  isOpen = true;
- 
-
-  menuItems = [
+  menu = [
     {
       title_section: 'Website',
       icon: 'add',
@@ -75,22 +58,17 @@ export class AppLayoutComponent   {
     }
   ]
 
- 
+  ngOnInit(){ }
 
-  constructor() {
-  }
+  constructor(private route: ActivatedRoute) { }
 
-
-  openNav() {
-    if (this.isOpen){
-      this.sidebar.nativeElement.style.width = "250px";
-      this.main.nativeElement.style.marginLeft = "250px";
-      this.isOpen = false;
-    } else{
+  openMenu(value){
+    if (value) {
+      this.sidebar.nativeElement.style.width = "230px";
+      this.main.nativeElement.style.marginLeft = "230px";
+    } else {
       this.sidebar.nativeElement.style.width = "60px";
       this.main.nativeElement.style.marginLeft = "60px";
-      this.isOpen = true;
     }
   }
-
 }

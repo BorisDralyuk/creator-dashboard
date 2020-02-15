@@ -1,0 +1,16 @@
+<div class="sidenav-container">
+<div class="item-sidenav-sub">
+	<mat-icon mat-list-icon>home</mat-icon>
+	<a mat-line>Home</a>
+</div>
+<div *ngFor="let menuItem of menu" class="block-sidenav">
+	<div class="item-sidenav">
+		<span>{{menuItem.title_section}}</span>
+	</div>
+	<div *ngFor="let item of menuItem.items" class="item-sidenav-sub" routerLink="{{item.link}}">
+		<mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+		<a mat-line>{{item.title}}</a>
+	</div>
+</div>
+</div>
+

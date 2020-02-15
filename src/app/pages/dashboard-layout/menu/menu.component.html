@@ -1,0 +1,13 @@
+<div class="sidenav">
+	<div>
+		<moonshot-logo [isOpen]="isOpen"></moonshot-logo>
+		<moonshot-sidenav [menu]="menu"></moonshot-sidenav>
+	</div>
+	<div class="toogle-sidenav">
+		<a class="closebtn" (click)="openNav()">
+			<mat-icon class="open-sidenav" *ngIf="isOpen" mat-list-icon>chevron_right</mat-icon>
+			<mat-icon class="close-sidenav" *ngIf="!isOpen" mat-list-icon>chevron_left</mat-icon>
+		</a>
+	</div>
+</div>
+

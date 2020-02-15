@@ -1,10 +1,19 @@
-<div>
-	<p>sdfasdssdfSD</p>
-	ASDFGAS
-	<p>sdfasdssdfSD</p>
-		<p>sdfasdssdfSD</p>
-			<p>sdfasdssdfSD</p>
-				<p>sdfasdssdfSD</p>
-					<p>sdfasdssdfSD</p>
-					
+<moonshot-ab-test-menu-control (toogleLeftBlock)="toogleLeftBlock()"></moonshot-ab-test-menu-control>
+
+<div class="ab-test-content">
+	<div *ngIf="toogleLeft" class="left-block">
+		<moonshot-select></moonshot-select>
+		<moonshot-drag-and-drop-list></moonshot-drag-and-drop-list>
+	</div>
+	<div class="ab-test-main-block">
+<!-- 
+<moonshot-frame></moonshot-frame> -->
+
+	</div>
+	<div>
+				<div *ngIf="toogleLeft"  class="right-block">
+					<moonshot-select></moonshot-select>
+					<moonshot-drag-and-drop-list></moonshot-drag-and-drop-list>
+				</div>
+	</div>
 </div>
